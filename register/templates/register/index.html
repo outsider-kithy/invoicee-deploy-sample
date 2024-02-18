@@ -1,0 +1,13 @@
+{% extends "top/base.html" %}
+{% block title %}ユーザー新規登録ページ{% endblock %}
+
+{% block content %}
+<h2>ユーザー新規登録ページ</h2>
+<p class="error">{{ error }}</p>
+<form method="POST" class="small">
+    <input type="text" name="username" value="" placeholder="ユーザー名">
+    <input type="password" name="password" value="" placeholder="パスワード">
+    <input type="password" name="password_confirm" value="" placeholder="もう一度入力してください">
+    <input type="submit" name="submit" value="ユーザー登録">
+</form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "top/base.html" %}
+{% block title %}請求書を発行{% endblock %}
+
+{% block content %}
+<h2>請求書を発行</h2>
+<form method="POST">
+<table>
+    <thead>
+        <th>選択</th>
+        <th>ジョブタイトル</th>
+        <th>クライアント</th>
+        <th>受注日</th>
+    </thead>
+    <tbody>
+        
+        {% for job in jobs %}
+        <tr>
+            <td>
+                <input type="radio" name="job" value="{{ job['id'] }}">
+                <label for="job">
+                    <td>{{ job['title'] }}</td>
+                    <td>{{ job['client'].client_name }}</td>
+                    <td>{{ job['created'] }}</td>
+                </label>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<input type="submit" value="請求書を出力" class="small">
+</form>
+
+{% endblock %}

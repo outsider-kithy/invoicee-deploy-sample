@@ -1,0 +1,183 @@
+//リセットCSS
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+a{
+    color: #000;
+    transition: 0.3s;
+    &:hover{
+        opacity: 0.7;
+    }
+    &:active{
+        color: #000;
+    }
+    &:visited{
+        color: #000;
+    }
+}
+
+input[type=text]{
+    display: block;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+input[type=password]{
+    display: block;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+input[type=submit]{
+    display: block;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    background-color: transparent;
+}
+
+select{
+    display: block;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    background-color: transparent;
+}
+
+//デザインここから
+body{
+    background-color: rgb(224, 225, 231);
+}
+header{
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0.5rem 1.0rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    border-radius: 0 0 1.0rem 1.0rem;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+    
+    nav{
+        display: flex;
+        max-width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+}
+main{
+    max-width: 940px;
+    margin: 100px auto 1.0rem;
+    padding: 1.0rem;
+    background-color: #fff;
+    border-radius: 1.0rem;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+    @media screen and (max-width:940px) {
+        width: 90%;
+    }
+}
+h2{
+    text-align: center;
+    color: #000;
+    font-size: 2.0rem;
+    @media screen and (max-width:940px) {
+        font-size: 1.6rem;
+    }
+}
+p.error{
+    color: #d82121;
+    text-align: center;
+}
+input[type=text]{
+    width: 100%;
+    margin: 1.0rem auto;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+}
+input[type=password]{
+    width: 100%;
+    margin: 1.0rem auto;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+}
+input[type=submit]{
+    width: 100%;
+    margin: 1.0rem auto;
+    padding: 0.5rem 2.0rem;
+    background-color: rgb(0, 123, 255);
+    color: #fff;
+    text-align: center;
+    border-radius: 2.0rem;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+    transition: 0.3s;
+    &:hover{
+        transform: translateY(5px);
+    }
+}
+select{
+    width: 100%;
+    margin: 1.0rem auto;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+    background-color: #fff;
+}
+
+.btn{
+    max-width: 940px;
+    margin: 1.0rem auto 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    a{
+        width: 19%;
+        margin: 0 auto 0.5rem;
+        padding: 1.0rem;
+        background-color: rgb(0, 123, 255);
+        color: #fff;
+        border-radius: 2.0rem;
+        box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+        text-align: center;
+    }
+}
+form{
+    max-width: 100%;
+    margin: 0 auto;
+}
+table{
+    width: 100%;
+    thead{
+        background-color: rgb(182, 189, 232);
+        th{
+            padding: 0.5rem;
+        }
+    }
+    tbody{
+        tr{
+            text-align: center;
+            &:nth-child(odd){
+                background-color: #fff;
+            }
+            &:nth-child(even){
+                background-color: rgb(224, 225, 231);
+            }
+            td{
+                padding: 0.5rem;
+            }
+        }
+    }
+}
+
+.small{
+    max-width: 300px;
+    margin: 0 auto;
+}

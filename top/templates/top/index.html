@@ -1,0 +1,23 @@
+{% extends "top/base.html" %}
+{% block title %}ジョブ一覧{% endblock %}
+
+{% block content %}
+<h2>ジョブ一覧</h2>
+<table>
+    <thead>
+        <th>ジョブタイトル</th>
+        <th>受注日</th>
+        <th>クライアント</th>
+    </thead>
+    <tbody>
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job['title'] }}</td>
+            <td>{{ job['created'] }}</td>
+            <td>{{ job['client'].client_name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

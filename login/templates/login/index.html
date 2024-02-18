@@ -1,0 +1,12 @@
+{% extends "top/base.html" %}
+{% block title %}ログインページ{% endblock %}
+
+{% block content %}
+<h2>ログインページ</h2>
+<p class="error">{{ error }}</p>
+<form method="POST" class="small">
+    <input type="text" name="username" value="" placeholder="ユーザー名">
+    <input type="password" name="password" value="" placeholder="パスワード">
+    <input type="submit" name="submit" value="ログイン">
+</form>
+{% endblock %}

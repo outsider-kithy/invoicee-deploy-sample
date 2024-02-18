@@ -1,0 +1,34 @@
+{% extends "top/base.html" %}
+{% block title %}管理画面{% endblock %}
+
+{% block content %}
+<h2>管理画面</h2>
+<p class="error"></p>
+<form method="POST" class="small">
+    <label for="client">クライアントを追加</label>
+    <input name="client" type="text" placeholder="クライアント名を入力">
+
+    <label for="tool">ツールを追加</label>
+    <input name="tool" type="text" placeholder="ツール名">
+    <input name="tool_price" type="text" placeholder="価格を入力">
+    <select name="tool_tax">
+        <option disabled selected value="">税率</option>
+        {% for tax in taxes %}
+            <option value="{{ tax['rate']}}">{{ (tax['rate'] * 100)|int }} %</option>
+        {% endfor %}
+    </select>
+
+    <label for="work">作業内容を追加</label>
+    <input name="work" type="text" placeholder="作業内容">
+    <input name="work_price" type="text" placeholder="価格を入力">
+    <select name="work_tax">
+        <option disabled selected value="">税率</option>
+        {% for tax in taxes %}
+            <option value="{{ tax['rate'] }}">{{ (tax['rate'] * 100)|int }} %</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="登録する">
+</form>
+
+{% endblock %}

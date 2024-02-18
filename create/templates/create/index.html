@@ -1,0 +1,28 @@
+{% extends "top/base.html" %}
+{% block title %}ジョブの新規作成{% endblock %}
+
+{% block content %}
+<h2>ジョブの新規作成</h2>
+<p class="error"></p>
+<form method="POST" class="small">
+    <input type="text" name="title" value="{{ request.form['title'] }}" required placeholder="ジョブタイトル">
+
+    <select name="tool">
+        <option disabled selected value="">ツール名</option>
+        {% for tool in tools %}
+            <option value="{{ tool['tool_type'] }}">{{ tool['tool_type'] }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="client">
+        <option disabled selected value="">クライアント</option>
+        {% for client in clients %}
+            <option value="{{ client['client_name'] }}">{{ client['client_name'] }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="ジョブを作成">
+
+</form>
+
+{% endblock %}

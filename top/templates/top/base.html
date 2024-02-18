@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0,width=device-width">
+        <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico')}}">
+        <title>{% block title %}{% endblock %} - invoicee</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1>invoicee</h1>
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('top.index') }}">ジョブ一覧</a>
+                    <a href="{{ url_for('create.index') }}">ジョブを作成</a>
+                    <a href="{{ url_for('update.index') }}">ジョブを更新</a>
+                    <a href="{{ url_for('invoice.index') }}">請求書を発行</a>
+                    <a href="{{ url_for('admin.index') }}">管理画面</a>
+                    <a href="{{ url_for('logout.index') }}">ログアウト</a>
+                {% else %}
+                    <a href="{{ url_for('login.index') }}">ログイン</a>
+                    <a href="{{ url_for('register.index') }}">ユーザー登録</a>
+                {% endif %}
+            </nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>
